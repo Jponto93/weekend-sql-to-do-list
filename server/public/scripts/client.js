@@ -1,3 +1,4 @@
+
 console.log('client.js');
 
 $(onReady);
@@ -58,7 +59,19 @@ function addTask () {
         complete: false
     }
     console.log(taskToSend);
-    
+
+    $.ajax({
+        method: 'POST',
+        url: '/tasks',
+        data: taskToSend
+    }).then(function (response) {
+        $('#taskIn').val(''),
+        $('#descriptionIn').val(''),
+        $('#dueIn').val('')
+        getTasks();
+    }).catch(function (err) {
+        console.log('Error', err);
+    })
     
 } // end saveTask
 
