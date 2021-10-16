@@ -35,9 +35,28 @@ router.get(`/`, (req, res) => {
     })
 })
 
-
-
 // POST 
+router.post('/', (req,res) => {
+    const newTask = req.body;
+    console.log('this is the new task', newTask);
+    
+    let queryText = `
+    INSERT INTO "tasks" ("task", "description", "urgency", "complete")
+    VALUES ( $1, $2, $3, $4);
+    `;
+    pool.query(queryText, [
+        newTask.task,
+        newTask.description,
+        newTask.urgency,
+        newTask.complete
+    ]).then((result) => {
+        res.sendStatus(201);
+    }).catch((err) => {
+        console.log('Error making POST to DB');
+        res.sendStatus(500);
+        
+    })
+})
 
 
 
