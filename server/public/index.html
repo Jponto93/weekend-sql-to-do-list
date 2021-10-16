@@ -19,22 +19,39 @@
               <label for="task">Task</label>
               <input type="text" id="taskIn" name="task" placeholder="What is the task?">
           
+              <label for="description">Description</label>
+              <textarea id="description" name="description" 
+              placeholder="Write something.."></textarea>
+              
               <label for="urgency">Urgency</label>
               <select id="urgency" name="urgency">
                 <option value="high">High</option>
                 <option value="medium">Medium</option>
                 <option value="low">Low</option>
               </select>
-          
-              <label for="description">Description</label>
-              <textarea id="description" name="description" placeholder="Write something.." style="height:200px"></textarea>
-          
+
               <input type="submit" value="Submit">
-          
+
             </form>
           </div>
 
-    
-        <script src="" async defer></script>
+          <section>
+            <h2 class= "inputHead">All Tasks</h2>
+            <table class="">
+              <thead>
+                <tr>
+                  <th>Task</th>
+                  <th>Description</th>
+                  <th>Urgency</th>
+                  <th>Complete</th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="viewTasks">
+              </tbody>
+            </table>
+          </section>
+
     </body>
 </html>

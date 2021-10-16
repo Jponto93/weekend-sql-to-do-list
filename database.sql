@@ -1,14 +1,14 @@
 CREATE TABLE "tasks" (
 "id" SERIAL,
-"urgency" VARCHAR (6),
 "task" VARCHAR (50),
 "description" VARCHAR (300),
-"complete" BOOLEAN
+"urgency" VARCHAR (6),
+"complete" BOOLEAN DEFAULT FALSE
 );
 
-INSERT INTO "tasks" ("task", "urgency", "description", "complete")
+INSERT INTO "tasks" ("task", "description", "urgency", "complete")
 VALUES
-('Grocery shop', 'High', 'get eggs and bacon', 'false'),
-('Laundry', 'Medium', 'dark load', 'false'),
-('Clean', 'Low', 'kitchen and bathroom', 'false');
+('Grocery shop', 'get eggs and bacon', 'High', 'false'),
+('Laundry', 'dark load', 'Medium', 'false'),
+('Clean', 'kitchen and bathroom', 'Low', 'false');
 
