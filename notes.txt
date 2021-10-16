@@ -7,7 +7,7 @@
         [x] task_complete BOOLEAN
     [x] set up database.sql file that includes all CREATE TABLE queries.
 
-[ ] create front end xp that allows a user to create a task
+[x] create front end xp that allows a user to create a task
     [ ] when task is created, it should be stored inside of a SQL database
         [ ] POST route to add task to database
     [ ] when a task is created, the front end should refreshed 
