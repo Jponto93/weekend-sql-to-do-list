@@ -1,19 +1,21 @@
 const express = require('express');
-const bodyParser = require('body-parser');
-const exp = require('constants');
-
 const app = express();
+const bodyParser = require('body-parser');
+const PORT = process.env.PORT || 5000;
+const taskRouter = require('./public/routes/tasks.router')
+
 
 // Setup body parser to translate request body into JSON
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
 
 // Serve "static assets"
 // from server/public
 app.use(express.static('server/public'));
 
+// ROUTES
+app.use('/tasks', taskRouter);
+
 // start express
-const PORT = 5000;
 app.listen(PORT, () => {
     console.log('up and running on port', PORT);
 });
