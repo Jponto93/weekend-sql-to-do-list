@@ -1,3 +1,4 @@
+const { query } = require('express');
 const express = require('express');
 const router = express.Router();
 const pg = require('pg');
@@ -57,11 +58,23 @@ router.post('/', (req,res) => {
         
     })
 })
-
-
-
 // PUT 
-
+router.put('/:id', (req, res) => {
+    let id = req.params.id;
+    let queryText =`
+    UPDATE "tasks"
+    SET "complete" = TRUE
+    WHERE "id" = $1
+    `;
+    console.log(id);
+    let values =[id]
+    pool.query(queryText, values).then((result) => {
+        res.sendStatus(200);
+    }).catch((error) => {
+        console.log('error', error);
+        res.sendStatus(500);
+    });
+});
 
 
 // DELETE

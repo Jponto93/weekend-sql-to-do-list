@@ -14,29 +14,28 @@
     </head>
     <body>
         <div class="container">
-            <form action="action_page.php">
-          
+            <form>
               <label for="task">Task</label>
-              <input type="text" id="taskIn" name="task" placeholder="What is the task?">
+              <input required type="text" id="taskIn" name="task" placeholder="What is the task?">
           
-              <label for="description">Description</label>
-              <textarea id="description" name="description" 
+              <label for="descriptionIn">Description</label>
+              <textarea required id="descriptionIn" name="description" 
               placeholder="Write something.."></textarea>
               
-              <label for="urgency">Urgency</label>
-              <select id="urgency" name="urgency">
+              <label for="urgencyIn">Urgency</label>
+              <select required id="urgencyIn" name="urgency">
                 <option value="high">High</option>
                 <option value="medium">Medium</option>
                 <option value="low">Low</option>
               </select>
 
-              <label for="complete">Complete</label>
-              <select id="complete" name="complete">
+              <label for="completeIn">Complete</label>
+              <select required id="completeIn" name="complete">
                 <option value="false">No</option>
                 <option value="true">Yes</option>
               
-
-              <input type="submit" value="Submit">
+              <button type="submit" id="submitBtn">Submit</button>
+              <input type="submit" value="Add Task">
 
             </form>
           </div>

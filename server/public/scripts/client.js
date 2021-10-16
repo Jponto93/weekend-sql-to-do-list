@@ -4,8 +4,14 @@ $(onReady);
 
 function onReady () {
     console.log('JQ');
+    // ('#submitBtn').on('click', submitBtn)
     getTasks();
+
 } // end onReady
+
+function setUpClickListeners() {
+    console.log('inside setUpClickListeners');
+} // end setUpClickListeners
 
 function getTasks () {
     $.ajax({
@@ -44,3 +50,30 @@ function renderTasks (response) {
     } // end for
 
 } // end renderTasks
+
+function saveTask (newTask) {
+    console.log('inside saveTask', newTask);
+    
+} // end saveTask
+
+// function submitBtn (e) {
+//     e.preventDefault();
+//     console.log('inside submitBtn on click');
+    
+//     let boolean;
+//     if ($('#complete').val() === 'false'){
+//         boolean = false;
+//     } else if ($('#complete').val() === 'true'){
+//         boolean = true;
+//     }
+//     console.log(boolean);
+//     let newTask = {
+//         task: $('#taskIn').val(),
+//         description: $('#descriptionIn').val(),
+//         urgency: $('#urgencyIn').val(),
+//         complete: boolean
+//     };
+//     console.log('new task', newTask);
+//     saveTask(newTask);
+    
+// }
