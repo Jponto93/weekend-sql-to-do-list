@@ -1,0 +1,42 @@
+[x] set up file structure
+[ ] set up database
+    [ ] use name weekend-to-do-app
+        columns??
+        [ ] task_name VARCHAR(50)
+        [ ] task_description VARCHAR(250)
+        [ ] task complete? boolean
+    [ ] set up database.sql file that includes all CREATE TABLE queries.
+
+[ ] create front end xp that allows a user to create a task
+    [ ] when task is created, it should be stored inside of a SQL database
+        [ ] POST route to add task to database
+    [ ] when a task is created, the front end should refreshed 
+        [ ] GET route 
+        [ ] Render function
+            [ ] render needs COMPLETE & DELETE dynamic buttons
+     to show all tasks that need to be completed
+    [ ] each task should have an option to complete or delete
+        when a task is complete, its visual representation should change 
+        on the front end
+            [ ] PUT route to COMPLETE task
+            [ ] DELETE route to DELETE task
+    [ ] whether or not a task is complete should also be stored in database
+    [ ] deleting a task should remove it from both the front end 
+        as well as the database
+
+[ ] set up pool.js
+    [ ] Export pool.js
+
+[ ] set up server.js file 
+    [ ] test using postman
+
+[ ] set up client file
+    [ ] test using postman
+
+styling
+    [ ] BG Color of page
+    [ ] font family & size
+    [ ]text color and/or BG color of tasks to show
+    whether or not they have been completed
+
+[ ] STRETCH GOALZ tbd...
