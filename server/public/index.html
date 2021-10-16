@@ -13,32 +13,14 @@
         <link rel="stylesheet" href="styles/styles.css">
     </head>
     <body>
-        <div class="container">
-            <form>
-              <label for="task">Task</label>
-              <input required type="text" id="taskIn" name="task" placeholder="What is the task?">
-          
-              <label for="descriptionIn">Description</label>
-              <textarea required id="descriptionIn" name="description" 
-              placeholder="Write something.."></textarea>
-              
-              <label for="urgencyIn">Urgency</label>
-              <select required id="urgencyIn" name="urgency">
-                <option value="high">High</option>
-                <option value="medium">Medium</option>
-                <option value="low">Low</option>
-              </select>
+      <h1>What's on the agenda?</h1>
 
-              <label for="completeIn">Complete</label>
-              <select required id="completeIn" name="complete">
-                <option value="false">No</option>
-                <option value="true">Yes</option>
-              
-              <button type="submit" id="submitBtn">Submit</button>
-              <input type="submit" value="Add Task">
-
-            </form>
-          </div>
+      <section>
+        <input type="text" id="taskIn" placeholder="Task">
+        <input type="text" id="descriptionIn" placeholder="Description">
+        <input type="text" id="dueIn" placeholder="When is it due?">
+        <button id="addTaskBtn">Add Tasks</button>
+      </section>
 
           <section>
             <h2 class= "inputHead">All Tasks</h2>
@@ -47,7 +29,7 @@
                 <tr>
                   <th>Task</th>
                   <th>Description</th>
-                  <th>Urgency</th>
+                  <th>Due</th>
                   <th>Complete</th>
                   <th></th>
                   <th></th>

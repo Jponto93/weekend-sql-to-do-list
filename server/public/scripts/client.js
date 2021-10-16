@@ -4,14 +4,10 @@ $(onReady);
 
 function onReady () {
     console.log('JQ');
-    // ('#submitBtn').on('click', submitBtn)
     getTasks();
+    $('#addTaskBtn').on('click', addTask)
 
 } // end onReady
-
-function setUpClickListeners() {
-    console.log('inside setUpClickListeners');
-} // end setUpClickListeners
 
 function getTasks () {
     $.ajax({
@@ -26,54 +22,44 @@ function getTasks () {
     })
 } // end getTasks
 
+
 function renderTasks (response) {
     let el = $('#viewTasks');
     el.empty();
-
+    let completeBtn = '';
     for (let i = 0; i < response.length; i++){
         let id = response[i].id
-        if (!response[i].complete){
+        if (response[i].complete === false){
             completeBtn = `<button class="completeBtn">Task Complete</button>`;
         }
         let entry = $(`
         <tr data-id"${id}">
             <td>${response[i].task}</td>
             <td>${response[i].description}</td>
-            <td>${response[i].urgency}</td>
+            <td>${response[i].due}</td>
             <td>${response[i].complete}</td>
             <td>${completeBtn}</td>
             <td><button class="deleteBtn">Delete</button</td>
         </tr>`);
 
         el.append(entry);
+        completeBtn = '';
         
     } // end for
 
 } // end renderTasks
 
-function saveTask (newTask) {
-    console.log('inside saveTask', newTask);
+function addTask () {
+    console.log('inside saveTask');
+    let taskToSend = {
+        task: $('#taskIn').val(),
+        description: $('#descriptionIn').val(),
+        due: $('#dueIn').val(),
+        complete: false
+    }
+    console.log(taskToSend);
+    
     
 } // end saveTask
 
-// function submitBtn (e) {
-//     e.preventDefault();
-//     console.log('inside submitBtn on click');
-    
-//     let boolean;
-//     if ($('#complete').val() === 'false'){
-//         boolean = false;
-//     } else if ($('#complete').val() === 'true'){
-//         boolean = true;
-//     }
-//     console.log(boolean);
-//     let newTask = {
-//         task: $('#taskIn').val(),
-//         description: $('#descriptionIn').val(),
-//         urgency: $('#urgencyIn').val(),
-//         complete: boolean
-//     };
-//     console.log('new task', newTask);
-//     saveTask(newTask);
-    
-// }
+
