@@ -7,9 +7,11 @@ function onReady () {
     console.log('JQ');
     getTasks();
     $('#addTaskBtn').on('click', addTask)
+    $('#viewTasks').on('click', '.deleteBtn', deleteTask)
 
 } // end onReady
 
+// GET
 function getTasks () {
     $.ajax({
         method: 'GET',
@@ -23,7 +25,7 @@ function getTasks () {
     })
 } // end getTasks
 
-
+// RENDER
 function renderTasks (response) {
     let el = $('#viewTasks');
     el.empty();
@@ -34,7 +36,7 @@ function renderTasks (response) {
             completeBtn = `<button class="completeBtn">Task Complete</button>`;
         }
         let entry = $(`
-        <tr data-id"${id}">
+        <tr data-id="${id}">
             <td>${response[i].task}</td>
             <td>${response[i].description}</td>
             <td>${response[i].due}</td>
@@ -50,6 +52,7 @@ function renderTasks (response) {
 
 } // end renderTasks
 
+// POST
 function addTask () {
     console.log('inside saveTask');
     let taskToSend = {
@@ -75,4 +78,21 @@ function addTask () {
     
 } // end saveTask
 
+// DELETE
+function deleteTask () {
+    console.log('inside deleteTask');
+    
+    let idToDelete = $(this).closest('tr').data('id');
+    console.log(idToDelete);
+
+    $.ajax({
+        method: 'DELETE',
+        url: `tasks/${idToDelete}`
+    }).then(function (response) {
+        console.log(response);
+        getTasks();
+    }).catch(function (error) {
+        alert('Error', error)
+    })
+} // end deleteTask
 
