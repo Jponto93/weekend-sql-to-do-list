@@ -28,14 +28,14 @@ router.get(`/`, (req, res) => {
     ORDER BY "id"
     ;`;
     pool.query(queryText).then((result) => {
+
         res.send(result.rows);
         
     }).catch((err) => {
         console.log('Error in GET query', err);
         res.sendStatus(500);
     })
-})
-
+});
 // POST 
 router.post('/', (req,res) => {
     const newTask = req.body;
@@ -57,7 +57,7 @@ router.post('/', (req,res) => {
         res.sendStatus(500);
         
     })
-})
+});
 // PUT 
 router.put('/:id', (req, res) => {
     let id = req.params.id;
@@ -93,7 +93,7 @@ router.delete('/:id', (req, res) => {
         console.log('Delete err in router', result);
         res.sendStatus(501);
     })
-})
+});
 
 //
 module.exports = router;
