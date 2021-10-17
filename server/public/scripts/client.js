@@ -36,7 +36,7 @@ function renderTasks (response) {
             completeBtn = `<button class="completeBtn">Task Complete</button>`;
         }
         let entry = $(`
-        <tr data-id"${id}">
+        <tr data-id="${id}">
             <td>${response[i].task}</td>
             <td>${response[i].description}</td>
             <td>${response[i].due}</td>
@@ -82,5 +82,17 @@ function addTask () {
 function deleteTask () {
     console.log('inside deleteTask');
     
+    let idToDelete = $(this).closest('tr').data('id');
+    console.log(idToDelete);
+
+    $.ajax({
+        method: 'DELETE',
+        url: `tasks/${idToDelete}`
+    }).then(function (response) {
+        console.log(response);
+        getTasks();
+    }).catch(function (error) {
+        alert('Error', error)
+    })
 } // end deleteTask
 
