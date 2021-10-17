@@ -8,8 +8,8 @@
     [x] set up database.sql file that includes all CREATE TABLE queries.
 
 [x] create front end xp that allows a user to create a task
-    [ ] when task is created, it should be stored inside of a SQL database
-        [ ] POST route to add task to database
+    [x] when task is created, it should be stored inside of a SQL database
+        [x] POST route to add task to database
     [x] when a task is created, the front end should refreshed 
         [x] GET route 
         [x] Render function
@@ -18,10 +18,10 @@
     [x] each task should have an option to complete or delete
         when a task is complete, its visual representation should change 
         on the front end
-            [ ] PUT route to COMPLETE task
-            [ ] DELETE route to DELETE task
+            [x] PUT route to COMPLETE task
+            [x] DELETE route to DELETE task
     [x] whether or not a task is complete should also be stored in database
-    [ ] deleting a task should remove it from both the front end 
+    [x] deleting a task should remove it from both the front end 
         as well as the database
 
 [x] set up pool.js
@@ -29,8 +29,8 @@
 [x] set up server.js file 
     [x] test using postman
 
-[ ] set up client file
-    [ ] test using postman
+[x] set up client file
+    [x] test using postman
 
 styling
     [ ] BG Color of page
