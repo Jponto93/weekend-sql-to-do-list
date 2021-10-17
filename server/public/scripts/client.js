@@ -30,17 +30,26 @@ function renderTasks (response) {
     let el = $('#viewTasks');
     el.empty();
     let completeBtn = '';
+    let status = '';
     for (let i = 0; i < response.length; i++){
         let id = response[i].id
         if (response[i].complete === false){
-            completeBtn = `<button class="completeBtn btn btn-success">Task Complete</button>`;
+            completeBtn = `<button class="completeBtn btn btn-success">Mark As Complete</button>`;
         } 
+        switch(response[i].complete){
+            case true: 
+            status = 'Task is complete';
+            break;
+            case false: 
+            status = 'Task not complete';
+            break;
+        }
         let entry = $(`
         <tr data-id="${id}">
             <td class="col-2">${response[i].task}</td>
             <td class="col-4">${response[i].description}</td>
             <td class="col-2">${response[i].due}</td>
-            <td class="col-2">${response[i].complete}</td>
+            <td class="col-2">${status}</td>
             <td class="col-1">${completeBtn}</td>
             <td class="col-1"><button class="deleteBtn btn btn-danger">Delete</button</td>
         </tr>`);
