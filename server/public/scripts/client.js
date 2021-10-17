@@ -101,4 +101,14 @@ function completeTask () {
     console.log('inside completeTask');
     let idToUpdate = $(this).closest('tr').data('id');
     console.log(idToUpdate);
+
+    $.ajax({
+        method: 'PUT',
+        url: `/tasks/${idToUpdate}`,
+    }).then(function (response) {
+        console.log(response);
+        getTasks();
+    }).catch(function (error) {
+        console.log(error);
+    });
 } // end completeTask
