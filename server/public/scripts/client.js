@@ -7,9 +7,11 @@ function onReady () {
     console.log('JQ');
     getTasks();
     $('#addTaskBtn').on('click', addTask)
+    $('#viewTasks').on('click', '.deleteBtn', deleteTask)
 
 } // end onReady
 
+// GET
 function getTasks () {
     $.ajax({
         method: 'GET',
@@ -23,7 +25,7 @@ function getTasks () {
     })
 } // end getTasks
 
-
+// RENDER
 function renderTasks (response) {
     let el = $('#viewTasks');
     el.empty();
@@ -50,6 +52,7 @@ function renderTasks (response) {
 
 } // end renderTasks
 
+// POST
 function addTask () {
     console.log('inside saveTask');
     let taskToSend = {
@@ -75,4 +78,9 @@ function addTask () {
     
 } // end saveTask
 
+// DELETE
+function deleteTask () {
+    console.log('inside deleteTask');
+    
+} // end deleteTask
 
