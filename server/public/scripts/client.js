@@ -8,7 +8,7 @@ function onReady () {
     getTasks();
     $('#addTaskBtn').on('click', addTask)
     $('#viewTasks').on('click', '.deleteBtn', deleteTask)
-
+    $('#viewTasks').on('click', '.completeBtn', completeTask)
 } // end onReady
 
 // GET
@@ -96,3 +96,19 @@ function deleteTask () {
     })
 } // end deleteTask
 
+// PUT 
+function completeTask () {
+    console.log('inside completeTask');
+    let idToUpdate = $(this).closest('tr').data('id');
+    console.log(idToUpdate);
+
+    $.ajax({
+        method: 'PUT',
+        url: `/tasks/${idToUpdate}`,
+    }).then(function (response) {
+        console.log(response);
+        getTasks();
+    }).catch(function (error) {
+        console.log(error);
+    });
+} // end completeTask
