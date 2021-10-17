@@ -33,16 +33,16 @@ function renderTasks (response) {
     for (let i = 0; i < response.length; i++){
         let id = response[i].id
         if (response[i].complete === false){
-            completeBtn = `<button class="completeBtn">Task Complete</button>`;
-        }
+            completeBtn = `<button class="completeBtn btn btn-success">Task Complete</button>`;
+        } 
         let entry = $(`
         <tr data-id="${id}">
-            <td>${response[i].task}</td>
-            <td>${response[i].description}</td>
-            <td>${response[i].due}</td>
-            <td>${response[i].complete}</td>
-            <td>${completeBtn}</td>
-            <td><button class="deleteBtn">Delete</button</td>
+            <td class="col-2">${response[i].task}</td>
+            <td class="col-4">${response[i].description}</td>
+            <td class="col-2">${response[i].due}</td>
+            <td class="col-2">${response[i].complete}</td>
+            <td class="col-1">${completeBtn}</td>
+            <td class="col-1"><button class="deleteBtn btn btn-danger">Delete</button</td>
         </tr>`);
 
         el.append(entry);

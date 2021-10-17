@@ -39,3 +39,22 @@ styling
     whether or not they have been completed
 
 [ ] STRETCH GOALZ tbd...
+
+[x] add bootstrap to front end and style!
+    [x] buttons -- make the create btn green and delete btn red 
+    [ ] inputs -- make your text inputs styled in the bootstrap way 
+    [x] responsive -- make your app responsive to diff screen sizes
+        checkout layout section
+    
+[ ] feature-confirm-delete  
+    [ ] create an "are you sure? yes/no" option when deleting a task
+        some styled options are bootstrap modal or sweet alerts: use the CDN option 
+
+[ ]feature-ordering-task-query
+    [ ] research query params to have the request reverse the order of the returned 
+        to dos 
+
+[ ] feature-time-completed
+    [ ] add the ablity to record when a task is complete
+        [ ] show complete date on the frontend in a pretty format
+

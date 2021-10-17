@@ -12,3 +12,12 @@ input[type=text], select, textarea {
 #description { 
     height:200px;
 }
+
+h1 {
+    text-align: center;
+
+}
+
+.inputHead {
+    text-align: center;
+}
