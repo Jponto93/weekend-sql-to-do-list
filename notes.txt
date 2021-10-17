@@ -40,10 +40,10 @@ styling
 
 [ ] STRETCH GOALZ tbd...
 
-[ ] add bootstrap to front end and style!
-    [ ] buttons -- make the create btn green and delete btn red 
+[x] add bootstrap to front end and style!
+    [x] buttons -- make the create btn green and delete btn red 
     [ ] inputs -- make your text inputs styled in the bootstrap way 
-    [ ] responsive -- make your app responsive to diff screen sizes
+    [x] responsive -- make your app responsive to diff screen sizes
         checkout layout section
     
 [ ] feature-confirm-delete  
